@@ -1,7 +1,6 @@
 # Weather Info
 
-Weather Info is a simple ![weather-info-temp](https://user-images.githubusercontent.com/84211856/189499792-b09d6211-4644-482c-a01e-610e50ef0fae.png)
-web app that displays weather information.
+Weather Info is a simple web app that displays weather information.
 The live project can be found [here](https://weather-info-web.vercel.app/).
 
 ## Tools used
