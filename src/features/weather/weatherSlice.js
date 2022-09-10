@@ -8,12 +8,10 @@ export const getCurrent = createAsyncThunk(
         const { city, API_KEY } = thunkAPI.getState().weather;
         try {
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-            console.log("get current", response);
             localStorage.setItem("city", city);
             return response.data;
         }
         catch (error) {
-            console.log("get current error", error);
             if (error.response.status === 404) return thunkAPI.rejectWithValue("404");
             return thunkAPI.rejectWithValue("An error occurred.");
         }
@@ -26,11 +24,9 @@ export const getForcast = createAsyncThunk(
         const { city, API_KEY } = thunkAPI.getState().weather;
         try {
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
-            console.log("get forcast", response);
             return response.data;
         }
         catch (error) {
-            console.log("get forcast error", error);
             if (error.response.status === 404) return thunkAPI.rejectWithValue("404");
             return thunkAPI.rejectWithValue("An error occurred.");
         }
